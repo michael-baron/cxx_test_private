@@ -19,8 +19,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: make with Klocwork
-      run: $env:KW_INSTALL\\kwinject make
+      run: ${KW_INSTALL}\\kwinject make
     - name: analyze with Klocwork
-      run: $env:KW_INSTALL\\kwbuildproject --url $env:KW_URL/$env:KW_PROJECT --replace-path $env:GITHUB_WORKSPACE=src -o kwtables -f kwinject.out
+      run: ${KW_INSTALL}\\kwbuildproject --url ${KW_URL}/${KW_PROJECT} --replace-path ${GITHUB_WORKSPACE}=src -o kwtables -f kwinject.out
     - name: load Klocwork results
-      run: $env:KW_INSTALL\\kwadmin --url $env:KW_URL load $env:KW_PROJECT kwtables
+      run: ${KW_INSTALL}\\kwadmin --url ${KW_URL} load ${KW_PROJECT} kwtables
