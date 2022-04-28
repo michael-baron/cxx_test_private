@@ -9,6 +9,7 @@ on:
 env:
   KW_URL: http://localhost:8080
   KW_PROJECT: cxx_test_private
+  KLOCWORK_LTOKEN: C:\\azure_agent\\ltoken
 
 jobs:
   build:
