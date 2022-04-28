@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - id: foo
-      uses: michael-baron/klocwork-integration-analysis-action@v02
+      uses: michael-baron/klocwork-integration-analysis-action@v03
       with:
         build-command: make
         url: http://localhost:8080
