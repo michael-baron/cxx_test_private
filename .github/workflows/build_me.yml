@@ -20,6 +20,6 @@ jobs:
     - name: make with Klocwork
       run: kwinject make
     - name: analyze with Klocwork
-      run: kwbuildproject --url ${KW_URL}/${KW_PROJECT} -o kwtables -f kwinject.out
+      run: kwbuildproject --url $KW_URL/$KW_PROJECT -o kwtables -f kwinject.out
     - name: load Klocwork results
-      run: kwadmin --url ${KW_URL} load ${KW_PROJECT} kwtables
+      run: kwadmin --url $KW_URL load $KW_PROJECT kwtables
