@@ -5,6 +5,11 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    
+env:
+  KW_INSTALL: C:\\Apps\\Klocwork\\Server22.1\\bin
+  KW_URL: http://localhost:8080
+  KW_PROJECT: cxx_test_private
 
 jobs:
   build:
@@ -13,5 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: make
-      run: make
+    - name: make with Klocwork
+      run: $env:KW_INSTALL\\kwinject make
+    - name: analyze with Klocwork
+      run: $env:KW_INSTALL\\kwbuildproject --url $env:KW_URL/$env:KW_PROJECT --replace-path $env:GITHUB_WORKSPACE=src -o kwtables -f kwinject.out
+    - name: load Klocwork results
+      run: $env:KW_INSTALL\\kwadmin --url $env:KW_URL load $env:KW_PROJECT kwtables
