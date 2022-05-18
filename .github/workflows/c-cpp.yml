@@ -17,7 +17,7 @@ jobs:
     - run: git diff --name-only origin/master > diff_file_list.txt
       shell: bash
     - id: foo
-      uses: michael-baron/klocwork-diff-analysis-action@v11
+      uses: michael-baron/klocwork-diff-analysis-action@v12
       with:
         build-command: make
         diff-list: diff_file_list.txt
