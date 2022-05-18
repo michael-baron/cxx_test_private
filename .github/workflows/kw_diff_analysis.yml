@@ -1,4 +1,4 @@
-name: Diff Analysis
+name: Klocwork Diff Analysis
 
 on:
   push:
