@@ -1,4 +1,4 @@
-name: Build Me CI
+name: Klocwork Integration Analysis
 
 on:
   push:
