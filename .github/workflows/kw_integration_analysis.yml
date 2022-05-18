@@ -1,9 +1,7 @@
-name: Build Me CI
+name: Klocwork Integration Analysis
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
     branches: [ master ]
     
 env:

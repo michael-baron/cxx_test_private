@@ -1,0 +1,25 @@
+name: Klocwork Diff Analysis
+
+on:
+  push:
+    branches: '!master'
+  pull_request:
+    branches: [ master ]
+    
+env:
+  KLOCWORK_LTOKEN: C:\\azure_agent\\ltoken
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - run: git diff --name-only origin/master > diff_file_list.txt
+      shell: bash
+    - id: foo
+      uses: michael-baron/klocwork-diff-analysis-action@v12
+      with:
+        build-command: make
+        diff-list: diff_file_list.txt
+        url: http://localhost:8080
+        project: cxx_test_private
