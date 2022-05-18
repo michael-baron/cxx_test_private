@@ -3,8 +3,6 @@ name: Build Me CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
     
 env:
   KLOCWORK_LTOKEN: C:\\azure_agent\\ltoken
