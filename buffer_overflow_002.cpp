@@ -20,3 +20,12 @@ void buffer_overflow_002_N()
 		((int*)a)[i] = i;
 	}
 }
+
+void buffer_overflow_002_P1()
+{
+	char a[8];
+	for (int i = 0; i < sizeof(a); i++)
+    {
+		((int*)a)[i] = i; //DEFECT
+    }
+}
